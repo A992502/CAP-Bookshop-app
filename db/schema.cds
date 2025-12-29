@@ -5,6 +5,10 @@ namespace tutorial.db;
 entity Books : cuid, managed {
     title    : String;
     author   : Association to Authors;
+    genre : String;
+    publishedAt :Date;
+    pages :  Integer;
+    price : Decimal(9,2);
     chapters : Composition of many Chapters
                  on chapters.book = $self;
 }
